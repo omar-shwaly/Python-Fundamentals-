@@ -1,0 +1,3 @@
+omar : 90 
+saif : 60 
+ahmed : 30 

@@ -1,0 +1,5 @@
+omar,90
+Ahmed,75
+Ali,45
+Mohamed,88
+Sara,60
