@@ -1,8 +1,3 @@
-STUDENT_FILE = "student_management.txt"
-GRADE_FILE = "grade_management.txt"
-TASK_FILE = "task_management.txt"
-
-
 def menu():
     print("#" * 50)
     print("menu".center(50, "-"))
@@ -40,7 +35,11 @@ def student_management():
             print("You selected : Add student ")
             name_student = input("Enter your name \n").strip()
             if name_student:
-                with open(STUDENT_FILE, "a", encoding="utf-8") as file:
+                with open(
+                    "Python_1/python_Final_Capston_Project/student_management.txt",
+                    "a",
+                    encoding="utf-8",
+                ) as file:
                     file.write(name_student + "\n")
                     print("Student Added Successfuly")
             else:
@@ -49,7 +48,7 @@ def student_management():
         elif choose == 2:
             print("You selected : View Students")
             with open(
-                STUDENT_FILE,
+                "Python_1/python_Final_Capston_Project/student_management.txt",
                 "r",
                 encoding="utf-8",
             ) as file:
@@ -62,9 +61,9 @@ def student_management():
 
         elif choose == 3:
             print("You selected : Search")
-            search_name = input("Enter your search name")
+            search_name = input("Enter your search name \n")
             with open(
-                STUDENT_FILE,
+                "Python_1/python_Final_Capston_Project/student_management.txt",
                 "r",
                 encoding="utf-8",
             ) as file:
@@ -80,13 +79,13 @@ def student_management():
             print("You selected :Delete Student ")
             delete_name = input("Enter the name you wish to delete \n")
             with open(
-                STUDENT_FILE,
+                "Python_1/python_Final_Capston_Project/student_management.txt",
                 "r",
                 encoding="utf-8",
             ) as file:
                 lines = file.readlines()
             with open(
-                STUDENT_FILE,
+                "Python_1/python_Final_Capston_Project/student_management.txt",
                 "w",
                 encoding="utf-8",
             ) as file:
@@ -131,7 +130,7 @@ def grade_management():
                 grade = int(input("Enter grade student\n"))
 
                 with open(
-                    GRADE_FILE,
+                    "Python_1/python_Final_Capston_Project/grade_management.txt",
                     "a",
                     encoding="utf-8",
                 ) as file:
@@ -146,7 +145,7 @@ def grade_management():
         elif choice == 2:
             print("You selected : View Grades ")
             with open(
-                GRADE_FILE,
+                "Python_1/python_Final_Capston_Project/grade_management.txt",
                 "r",
                 encoding="utf-8",
             ) as file:
@@ -164,7 +163,7 @@ def grade_management():
             print("You selected : Search Student Grades ")
             search_name = input("Enter Searsh Student Name\n").strip()
             with open(
-                GRADE_FILE,
+                "Python_1/python_Final_Capston_Project/grade_management.txt",
                 "r",
                 encoding="utf-8",
             ) as file:
@@ -181,7 +180,11 @@ def grade_management():
 
             print("You selected : Calculate Average ")
 
-            with open(GRADE_FILE, "r", encoding="utf-8") as file:
+            with open(
+                "Python_1/python_Final_Capston_Project/grade_management.txt",
+                "r",
+                encoding="utf-8",
+            ) as file:
                 lines = file.readlines()
 
             grades = []
@@ -207,7 +210,11 @@ def grade_management():
 
             print("You selected :Show The Highest Grade")
 
-            with open(GRADE_FILE, "r", encoding="utf-8") as file:
+            with open(
+                "Python_1/python_Final_Capston_Project/grade_management.txt",
+                "r",
+                encoding="utf-8",
+            ) as file:
                 lines = file.readlines()
 
                 highest_grade = -1
@@ -235,7 +242,11 @@ def grade_management():
         elif choice == 6:
             print("You selected : Show The Lowest Grade")
 
-            with open(GRADE_FILE, "r", encoding="utf-8") as file:
+            with open(
+                "Python_1/python_Final_Capston_Project/grade_management.txt",
+                "r",
+                encoding="utf-8",
+            ) as file:
                 lines = file.readlines()
                 lowest_grade = 1000
                 lowst_student = ""
@@ -292,12 +303,20 @@ def task_management():
             print("You selected :  Add task")
 
             task = input("Enter your task \n")
-            with open(TASK_FILE, "a", encoding="utf-8") as file:
+            with open(
+                "Python_1/python_Final_Capston_Project/task_management.txt",
+                "a",
+                encoding="utf-8",
+            ) as file:
                 file.write(task + "\n")
 
         elif select == 2:
             print("You selected : View taskes ")
-            with open(TASK_FILE, "r", encoding="utf-8") as file:
+            with open(
+                "Python_1/python_Final_Capston_Project/task_management.txt",
+                "r",
+                encoding="utf-8",
+            ) as file:
                 lines = file.readlines()
 
                 for line in lines:
@@ -308,7 +327,11 @@ def task_management():
 
         elif select == 3:
             print("You selected :  Search task")
-            with open(TASK_FILE, "r", encoding="utf-8") as file:
+            with open(
+                "Python_1/python_Final_Capston_Project/task_management.txt",
+                "r",
+                encoding="utf-8",
+            ) as file:
                 lines = file.readlines()
                 search_about_task = input("Enter the task you wish to find\n").strip()
                 for line in lines:
@@ -320,14 +343,22 @@ def task_management():
 
         elif select == 4:
             print("You selected : Delete task  ")
-            with open(TASK_FILE, "r", encoding="utd-8") as file:
+            with open(
+                "Python_1/python_Final_Capston_Project/task_management.txt",
+                "r",
+                encoding="utd-8",
+            ) as file:
                 lines = file.readlines()
                 num = 1
                 for line in lines:
                     print(f"{num}- {line}")
 
                 number_task_delete = int(input("Enter number  task dlate\n"))
-            with open(TASK_FILE, "w", encoding="utd-8") as file:
+            with open(
+                "Python_1/python_Final_Capston_Project/task_management.txt",
+                "w",
+                encoding="utd-8",
+            ) as file:
 
                 if num != number_task_delete:
                     file.write(line)
@@ -366,7 +397,11 @@ def reports():
             print("#" * 50)
             print("Studnt".center(50, "-"))
             print("#" * 50)
-            with open(STUDENT_FILE, "r", encoding="utf-8") as file:
+            with open(
+                "Python_1/python_Final_Capston_Project/student_management.txt",
+                "r",
+                encoding="utf-8",
+            ) as file:
                 lines = file.readlines()
             total_student = 0
             for line in lines:
@@ -384,7 +419,11 @@ def reports():
             Student_with_grade = []
             passed = 0
             failed = 0
-            with open(GRADE_FILE, "r", encoding="utf-8") as file:
+            with open(
+                "Python_1/python_Final_Capston_Project/grade_management.txt",
+                "r",
+                encoding="utf-8",
+            ) as file:
                 lines = file.readlines()
                 for line in lines:
                     line = line.strip()
@@ -414,7 +453,11 @@ def reports():
             print("Tasks".center(50, "-"))
             print("#" * 50)
 
-            with open(TASK_FILE, "r", encoding="utf-8") as file:
+            with open(
+                "Python_1/python_Final_Capston_Project/task_management.txt",
+                "r",
+                encoding="utf-8",
+            ) as file:
                 lines = file.readlines()
             Total_tasks = 0
             for line in lines:
