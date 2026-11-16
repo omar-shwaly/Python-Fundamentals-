@@ -11,14 +11,12 @@ def menu():
     print("3- Dlete task")
     print("4- Exit")
     print("#" * 50)
-    option = int(input("Enter your option \n"))
-    return option
 
 
 def Add_Task():
     day = input("Enter your day \n").strip().capitalize()
     if day in days:
-        with open("File/Tasks.txt", "a", encoding="utf-8") as file:
+        with open("Python_1/File/Tasks.txt", "a", encoding="utf-8") as file:
             file.write(f" {day}".center(20, "*") + "\n")
 
             while True:
@@ -35,7 +33,7 @@ def Add_Task():
 
 def View_Tasks():
 
-    with open("File/Tasks.txt", "r", encoding="utf-8") as file:
+    with open("Python_1/File/Tasks.txt", "r", encoding="utf-8") as file:
         lines = file.readlines()
         if len(lines) == 0:
             print("Not found task")
@@ -51,7 +49,7 @@ def Dlete_Task():
         print(f"{i+1} - {lines[i].strip()}")
     num = int(input("Enter task number to delete \n"))
     lines.pop(num - 1)
-    with open("File/Tasks.txt", "w", encoding="utf-8") as file:
+    with open("Python_1/File/Tasks.txt", "w", encoding="utf-8") as file:
         file.writelines(lines)
     print("Task Deleted Successfuly")
 
@@ -62,7 +60,8 @@ def Exit():
 
 option = 0
 while option != 4:
-    option = menu()
+    menu()
+    option = int(input("Enter your option \n"))
     if option == 1:
         Add_Task()
     elif option == 2:
